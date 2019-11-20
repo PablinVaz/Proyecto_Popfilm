@@ -1,0 +1,465 @@
+/* CONFIGURACION PARA TODO A NO SER QUE SE ESPECIFIQUE EN CADA UNO*/
+*{
+	margin:0;
+	padding:0;
+	font-family: helvetica Neue;
+	font-weight: lighter;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html, body{
+	height:100%;
+	margin: 0;
+	/* display: flex; */
+	flex-direction: column;
+  }
+/* CONFIGURACION NAVBAR */
+
+img.imagnav{
+	margin-left: 10%;
+	margin-top: 10%;
+	height: 80%;
+	width: 80%;
+}
+nav{
+	position: fixed;
+	width: 15.6%;
+	height: 100%;
+	background-color: #2d2d2d;
+}
+ul.nav{
+	margin-top: 10%;
+	list-style: none;
+	display: block;
+}
+li.nav{
+	width: 100%;
+	height:5%;
+	border-bottom: 1px solid #323232;
+	overflow: hidden;
+}
+p.menu{
+	position: relative;
+	padding:0.4em;
+	padding-right: 0.6em;
+	float:right;
+	color:white;
+	opacity: .6;
+	font-size: 1.6em;
+	transition: opacity .2s;
+}
+
+div.barra{
+	position: absolute;
+	height: 3.2em;
+	width: 0;
+	background-color: #aaa;
+	opacity: .1;
+	transition: width .2s;
+}
+
+li:hover div.barra{
+	width:100%;
+}
+
+input#buscador{
+	width:100%;
+	height:2.083em;
+	background-color: #3c3c3c;
+	outline: none;
+	border: 0;
+	color: rgb(212, 179, 32);
+	font-size: 1.5em;
+	text-align: right;
+	padding-right: 0.6em;
+	background-image: url(../img/search.png);
+	background-repeat: no-repeat;
+	background-position: 0.6em 0.6em;
+	transition: background-position .2s;
+	opacity: .5;
+}
+
+input#buscador:focus{
+	background-position: 300px 15px;
+}
+
+::-webkit-input-placeholder{
+	color:  rgb(212, 179, 32);
+	text-align: right;
+}
+
+li:hover p.menu{
+	opacity: 1;
+}
+/* CONFIGURACION BARRA SOCIAL */
+div.social {
+	margin-left: 9%; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla. */
+	margin-top:30%; /* Bajamos la barra un 35% de arriba a abajo. */
+	z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+ 
+div.social ul {
+	list-style: none;
+}
+ 
+div.social ul a {
+	display: inline-block;
+	color:#fff;
+	background: #000;
+	padding: 0.7em 0.94em;
+	text-decoration: none;
+	-webkit-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease; /* Establecemos una transición a todas las propiedades. */
+}
+ 
+div.social ul .icon-facebook2 {background:#3b5998;} /* Establecemos los colores de cada red social, aprovechando su class. */
+div.social ul .icon-twitter {background: #00abf0;}
+div.social ul .icon-pinterest2 {background: #ae181f;}
+div.social ul .icon-instagram {background: #fd1d1d;}
+div.social ul .icon-envelop {background: #666666;}
+ 
+div.social ul a:hover {
+	background: #000; /*Cambiamos el fondo cuando el usuario pase el mouse.*/
+}
+/* CONFIGURACION FOOTER */
+div.footer{
+	margin-top: 35%;
+	text-align:center;
+	color:white;
+}
+
+div.login{
+	width: 2em;
+	margin-left: 8.5em;
+	padding-top: 3em;
+	display:inline-block;
+	
+}
+.gallery {
+	background: #EEE;
+  }
+  
+  .gallery-cell {
+	width: 28%;
+	height: 200px;
+	margin-right: 10px;
+	background: #8C8;
+	counter-increment: gallery-cell;
+  }
+  
+  .gallery-cell.is-selected {
+	background: #ED2;
+  }
+  
+  /* cell number */
+  .gallery-cell:before {
+	display: block;
+	text-align: center;
+	content: counter(gallery-cell);
+	line-height: 200px;
+	font-size: 80px;
+	color: white;
+  }
+  /* CONFIGURACION ABOUT */
+  
+div.texto{
+	text-align:center;
+	font-family: helvetica Neue;
+	font-weight: lighter;
+}
+h1.bnb{
+	margin-top: 1em;
+	font-size: 3em;
+	font-weight: bold;
+}
+h2.question{
+	margin-top: 0.7em;
+	font-size: 2em;
+	text-align: justify;
+	margin-left: 6em;
+	font-weight: bold;
+}
+p.desc{
+	margin: 1em 7em 0 7em;
+	font-size: 1.7em;
+	text-align: justify;
+}
+a.about{
+	color: white;
+	text-decoration: none;
+}
+.imgabout{
+	margin-left: 30%;
+	display: inline;
+}
+.imgcent{
+	padding-top: 5%;
+	width: 25%;
+}
+.imgder{
+	padding-left: 5%;
+	padding-top: 5%;
+	width: 15%;
+}
+
+#contenedor_about{
+	position:initial;
+	background-color: rgb(223, 220, 220);
+	margin-right: 1.2em;
+	margin-top: 1.2em;
+	width: 98.8em;
+	height:56em;
+	float: right;
+	align-items: flex-start;
+}
+/* CONFIGURACION INDEX */
+#contenedor_principal{
+	position:initial;
+	background-color: rgb(223, 220, 220);
+	margin-right: 1.2em;
+	margin-top: 1.2em;
+	width: 98.8em;
+	height:56em;
+	float: right;
+	align-items: flex-start;
+}
+/* CONFIGURACION GENERO */
+#contenedor_genero{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:contain;
+	background-image: url(../img/fondo_cine.jpg);
+	width: 100%;
+	height:100%;
+	float: right;
+	align-items: flex-start;
+}
+#infogen{
+	position: absolute;
+	overflow: hidden;
+	width: 270px;
+	height: 150px;
+	background-color: rgba(58, 58, 58, 0.9);
+	transition: opacity 0.2s;
+	border-radius: 20px;
+	opacity: 0;
+}
+
+#headgen{
+	position: absolute;
+	margin-top: 20px;
+	text-align: center;
+	transition: margin 0.2s;
+	color:white;
+	margin-left: -50%;
+	font-size: 21px;
+}
+#descgen{
+	margin: auto;
+	color: white;
+	font-size: 21px;
+	width: 250px;
+	text-align: center;
+	transition: margin 0.3s;
+	margin-top: 160px;
+}
+/* ACCION */
+#imgAccion{
+	width: 270px;
+	height: 150px;
+	margin-left: 22%;
+	margin-top: 5%;
+	background-image: url(../img/accion.png);
+	display: inline-block;
+}
+#imgAccion:hover #infogen{
+	opacity: 1;
+}
+#imgAccion:hover #headgen{
+	margin-left: 38%;
+}
+#imgAccion:hover #descgen{
+	margin-top: 25%;
+}
+
+/* ANIMACION */
+#imgAni{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/animacion.png);
+	display: inline-block;
+}
+#imgAni:hover #infogen{
+	opacity: 1;
+}
+#imgAni:hover #headgen{
+	margin-left: 33%;
+}
+#imgAni:hover #descgen{
+	margin-top: 25%;
+}
+/* AVENTURA */
+#imgAven{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/aventuras.png);
+	display: inline-block;
+}
+#imgAven:hover #infogen{
+	opacity: 1;
+}
+#imgAven:hover #headgen{
+	margin-left: 36%;
+}
+#imgAven:hover #descgen{
+	margin-top: 25%;
+}
+/* SCI-FI */
+#imgbel{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/belico.png);
+	display: inline-block;
+}
+#imgbel:hover #infogen{
+	opacity: 1;
+}
+#imgbel:hover #headgen{
+	margin-left: 38%;
+}
+#imgbel:hover #descgen{
+	margin-top: 25%;
+}
+/* COMEDIA */
+#imgComedia{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/comedia.png);
+	display: inline-block;
+}
+#imgComedia:hover #infogen{
+	opacity: 1;
+}
+#imgComedia:hover #headgen{
+	margin-left: 38%;
+}
+#imgComedia:hover #descgen{
+	margin-top: 25%;
+}
+/* DRAMA */
+#imgDrama{
+	margin-left: 22%;
+	margin-top: 2%;
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/drama.png);
+	display: inline-block;
+}
+#imgDrama:hover #infogen{
+	opacity: 1;
+}
+#imgDrama:hover #headgen{
+	margin-left: 38%;
+}
+#imgDrama:hover #descgen{
+	margin-top: 25%;
+}
+/* HISTORICO */
+#imgHist{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/historico.png);
+	display: inline-block;
+}
+#imgHist:hover #infogen{
+	opacity: 1;
+}
+#imgHist:hover #headgen{
+	margin-left: 34%;
+}
+#imgHist:hover #descgen{
+	margin-top: 25%;
+}
+/* MUSICAL */
+#imgMus{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/musical.png);
+	display: inline-block;
+}
+#imgMus:hover #infogen{
+	opacity: 1;
+}
+#imgMus:hover #headgen{
+	margin-left: 36%;
+}
+#imgMus:hover #descgen{
+	margin-top: 25%;
+}
+/* SCI_FI */
+#imgSci{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/sci_fi.png);
+	display: inline-block;
+}
+#imgSci:hover #infogen{
+	opacity: 1;
+}
+#imgSci:hover #headgen{
+	margin-left: 38%;
+}
+#imgSci:hover #descgen{
+	margin-top: 25%;
+}
+/* Terror */
+#imgTerror{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/terror.png);
+	display: inline-block;
+}
+#imgTerror:hover #infogen{
+	opacity: 1;
+}
+#imgTerror:hover #headgen{
+	margin-left: 38%;
+}
+#imgTerror:hover #descgen{
+	margin-top: 25%;
+}
+/* THRILLER */
+#imgTh{
+	margin-left: 42%;
+	margin-top: 2%;
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/thriller.png);
+	display: inline-block;
+}
+#imgTh:hover #infogen{
+	opacity: 1;
+}
+#imgTh:hover #headgen{
+	margin-left: 37%;
+}
+#imgTh:hover #descgen{
+	margin-top: 25%;
+}
+/* WESTERN */
+#imgWestern{
+	width: 270px;
+	height: 150px;
+	background-image: url(../img/western.png);
+	display: inline-block;
+}
+#imgWestern:hover #infogen{
+	opacity: 1;
+}
+#imgWestern:hover #headgen{
+	margin-left: 37%;
+}
+#imgWestern:hover #descgen{
+	margin-top: 25%;
+}

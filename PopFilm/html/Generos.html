@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<!--
+         ___         ___           ___         ___                                   ___     
+        /  /\       /  /\         /  /\       /  /\      ___                        /__/\    
+       /  /::\     /  /::\       /  /::\     /  /:/_    /  /\     ___              |  |::\    
+      /  /:/\:\   /  /:/\:\     /  /:/\:\   /  /:/ /\  /  /:/    /__/\     ___     |  |:|:\  
+     /  /:/~/:/  /  /:/  \:\   /  /:/~/:/  /  /:/ /:/ /__/::\    \  \ \   /  /\  __|__|:|\:\ 
+    /__/:/ /:/  /__/:/ \__\:\ /__/:/ /:/  /__/:/ /:/  \__\/\:\__  \  \:\ /  /:/ /__/::::| \:\
+    \  \:\/:/   \  \:\ /  /:/ \  \:\/:/   \  \:\/:/      \  \:\/\  \  \:\  /:/  \  \:\~~\__\/
+     \  \::/     \  \:\  /:/   \  \::/     \  \::/        \__\::/   \  \:\/:/    \  \:\      
+      \  \:\      \  \:\/:/     \  \:\      \  \:\        /__/:/     \  \::/      \  \:\     
+       \  \:\      \  \::/       \  \:\      \  \:\       \__\/       \__\/        \  \:\    	
+        \__\/       \__\/         \__\/       \__\/                                 \__\/       
+-->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Con este meta le decimos al navegador que el ancho de la pagina sea igual que el ancho del dispositivo y que no agrande ni reduzca los elementos que estan dentro -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!--Relacionamos nuestro documento html con el documento css para atribuirle propiedades-->
+	<link rel="stylesheet" type="text/css" href=".././css/mycss.css">
+	<link rel="stylesheet" href="../css/fonst.css">
+	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="../js/login.js">
+	<link rel="stylesheet" href="../js/register.js">
+	<link rel="stylesheet" href="../js/body.js">
+	<!--Aquí va el nombre de la página, que aparece en la pestaña -->
+	<title>Pop Film</title>
+	<!--Insertamos un favicom-->
+	<link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
+</head>
+<body>
+	<!-- NAVBAR -->
+	<header>
+		<nav>
+			<div>
+				<img  class="imagnav" src="../img/PF2.5.png" alt="">
+			</div>
+			<ul class="nav">
+				<li class="nav">
+					<input type="text" id="buscador" placeholder="!!Busca tu favorita¡¡">
+				</li>
+				<a href="../html/PopFilm.html">
+					<li class="nav">
+						<div class="barra"></div>
+						<p class="menu">Inicio</p>
+					</li>
+				</a>
+				<a href="../html/Cartelera.html">
+					<li  class="nav">
+						<div class="barra"></div>
+						<p class="menu">Carterela</p>
+					</li>
+				</a>
+				<a href="../html/Estrenos.html">
+					<li  class="nav">
+						<div class="barra"></div>
+						<p class="menu">Estrenos</p>
+					</li>
+				</a>
+				<a href="../html/Generos.html">
+					<li  class="nav">
+						<div class="barra"></div>
+						<p class="menu">Generos</p>
+					</li>
+				</a>
+				<a href="#">
+					<li  class="nav">
+						<div class="barra"></div>
+						<p class="menu">Series</p>
+					</li>
+				</a>
+			</ul>
+			<div class="login">
+				<ul class="login" onclick="document.getElementById('id01').style.display='block'">
+					<img class="login" src="../img/login.png">
+				</ul>
+				<div id="id01" class="modal">
+					<form class="modal-content animate" action="/action_page.php" method="post">
+						<div class="contmodal">
+							<label for="uname"><b>Usuario</b></label>
+							<input class="imodal" type="text" placeholder="Su usuario" name="uname" required>
+							<label for="psw"><b>Contraseña</b></label>
+							<input class="imodal" type="password" placeholder="Su contraseña" name="psw" required>
+							<button type="submit">Entrar</button>
+							<label>
+								<input class="imodal" type="checkbox" checked="checked" name="remember"> Recuerdame
+							</label>
+						</div>
+						<div class="contmodal">
+							<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+							<span class="psw">Redordar <a href="#">Contraseña?</a></span>
+						</div>
+					</form>
+				</div>
+				<ul class="login" onclick="document.getElementById('id02').style.display='block'">
+					<img class="login" src="../img/register.png">
+				</ul>
+				<div id="id02" class="modalreg">
+					<form class="modal-content animate" action="/action_page.php" method="post">
+						<div class="contmodal">
+							<label for="uname"><b>Usuario</b></label>
+							<input class="imodal" type="text" placeholder="Su usuario" name="uname" required>
+							<label for="e-mail"><b>E-mail</b></label>
+							<input class="imodal" type="text" placeholder="Su e-mail" name="psw" required>
+							<label for="e-mail"><b>Repita E-mail</b></label>
+							<input class="imodal" type="text" placeholder="Repita su e-mail" name="psw" required>
+							<label for="psw"><b>Contraseña</b></label>
+							<input class="imodal" type="password" placeholder="Su contraseña" name="psw" required>
+							<label for="psw"><b>Repita contraseña</b></label>
+							<input class="imodal" type="password" placeholder="Repita su contraseña" name="psw" required>
+							<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtnreg">Cancelar</button>
+							<button class="buttonreg" type="submit">Registrame</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="social">
+				<ul>
+					<a href="https://www.facebook.com/popfilm.java.52" target="_blank" class="icon-facebook2"></a>
+					<a href="https://www.twitter.com/PopfilmO" target="_blank" class="icon-twitter"></a>
+					<a href="https://www.pinterest.es/popfilmoficial/" target="_blank" class="icon-pinterest2"></a>
+					<a href="https://www.instagram.com/popfilm_oficial/" target="_blank" class="icon-instagram"></a>
+					<a href="mailto:popflimoficial@gmail.com" class="icon-envelop"></a>
+				</ul>
+			</div>
+			<div class="footer">
+				<p>| Copyright ©2019 All rights reserved |</p>
+				<p>
+					<a class="about" href="">| FAQs |</a>
+					<a class="about" href="About.html">| About |</a>
+				</p>
+			</div>
+		</nav>
+	</header>
+	<!-- BODY -->
+	<div id="contenedor_genero">
+			<div id="imgAccion">
+				<div id="infogen">
+					<p id="headgen">Acción</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgAni">
+				<div id="infogen">
+					<p id="headgen">Animación</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgAven">
+				<div id="infogen">
+					<p id="headgen">Aventura</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgbel">
+				<div id="infogen">
+					<p id="headgen">Bélico</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgComedia">
+				<div id="infogen">
+					<p id="headgen">Comedia</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgDrama">
+				<div id="infogen">
+					<p id="headgen">Drama</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgHist">
+				<div id="infogen">
+					<p id="headgen">Historico</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgMus">
+				<div id="infogen">
+					<p id="headgen">Musical</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgSci">
+				<div id="infogen">
+					<p id="headgen">Sci-Fi</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgTerror">
+				<div id="infogen">
+					<p id="headgen">Terror</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgTh">
+				<div id="infogen">
+					<p id="headgen">Thriller</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+			<div id="imgWestern">
+				<div id="infogen">
+					<p id="headgen">Western</p>
+					<p id="descgen"></p>
+				</div>
+			</div>
+	</div>
+</body>
+
+</html>

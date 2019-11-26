@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceException;
+
 import javax.persistence.TypedQuery;
 
 import com.entidades.dao.jee.DirectorDao;
@@ -17,7 +17,6 @@ public class DirectorDaoImpl implements DirectorDao {
 
 	
 	
-	private static final String USER_FIND = "SELECT d FROM Director d where d.id=:id";
 	private static final String USER_FIND_ALL= "SELECT d FROM Director d";
 	
 	private EntityManagerFactory managerFactory;

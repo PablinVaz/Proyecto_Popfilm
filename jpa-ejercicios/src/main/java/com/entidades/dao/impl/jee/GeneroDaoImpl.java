@@ -5,13 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceException;
-import javax.persistence.TypedQuery;
 
+import javax.persistence.TypedQuery;
 import com.entidades.dao.jee.GeneroDao;
-import com.entidades.jee.Director;
 import com.entidades.jee.Genero;
-import com.entidades.jee.Productora;
+
 
 
 public class GeneroDaoImpl implements GeneroDao {
@@ -19,7 +17,6 @@ public class GeneroDaoImpl implements GeneroDao {
 
 
 	
-	private static final String USER_FIND = "SELECT g FROM Genero g where g.id=:id";
 	private static final String USER_FIND_ALL= "SELECT g FROM Genero g";
 	
 	private EntityManagerFactory managerFactory;

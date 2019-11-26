@@ -5,12 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entidades.dao.jee.UsuarioDao;
-import com.entidades.jee.Director;
-import com.entidades.jee.Pelicula;
 import com.entidades.jee.Usuario;
 
 
@@ -18,7 +15,6 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	
 	private static final String USER_COUNT = "SELECT COUNT(u) FROM Usuario u "
 			+ "WHERE u.email = :email AND u.password = :password";
-	private static final String USER_FIND = "SELECT u FROM Usuario u where u.id=:id";
 	private static final String USER_FIND_ALL = "SELECT u FROM Usuario u";
 	
 	

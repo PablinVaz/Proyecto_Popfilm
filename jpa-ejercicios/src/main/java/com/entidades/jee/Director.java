@@ -1,7 +1,7 @@
 package com.entidades.jee;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class Director implements Serializable {
 	private String nombre;
 	
 	@Column(name = "fecha_de_nacimiento")
-	private java.sql.Date fechaDeNacimiento;
+	private Date fechaDeNacimiento;
 	
 	@Column(name = "numero_de_premios")
 	private int numPremios;
@@ -52,7 +52,7 @@ public class Director implements Serializable {
 	
 	// Constructor sobrecargado
 
-	public Director(Long id_director, String nombre, java.sql.Date fechaDeNacimiento, int numPremios,  List<Pelicula> peliculas) {
+	public Director(Long id_director, String nombre, Date fechaDeNacimiento, int numPremios,  List<Pelicula> peliculas) {
 		super();
 		this.id_director = id_director;
 		this.nombre = nombre;
@@ -83,8 +83,8 @@ public class Director implements Serializable {
 		return fechaDeNacimiento;
 	}
 
-	public void setFechaDeNacimiento(java.util.Date fechaDeNacimiento) {
-		this.fechaDeNacimiento = (Date) fechaDeNacimiento;
+	public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+		this.fechaDeNacimiento = fechaDeNacimiento;
 	}
 
 	public int getNumPremios() {

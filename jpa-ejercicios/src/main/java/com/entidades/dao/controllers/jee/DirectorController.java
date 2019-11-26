@@ -1,7 +1,6 @@
 package com.entidades.dao.controllers.jee;
 
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -87,7 +86,7 @@ public class DirectorController extends HttpServlet {
 		
 		request.setAttribute("director", director);
 		
-		dispatcher = request.getRequestDispatcher("/views/employee-form.jsp");
+		dispatcher = request.getRequestDispatcher("/views/director-form.jsp");
 		
 		dispatcher.forward(request, response);
 	}
@@ -98,7 +97,7 @@ public class DirectorController extends HttpServlet {
 		
 		request.setAttribute("lista", lista);
 		
-		dispatcher = request.getRequestDispatcher("/views/employee-list.jsp");
+		dispatcher = request.getRequestDispatcher("/views/director-list.jsp");
 		
 		dispatcher.forward(request, response);
 	}
@@ -108,13 +107,13 @@ public class DirectorController extends HttpServlet {
 		String id = request.getParameter("id_director");
 		String cadenaFecha = request.getParameter("fecha_de_nacimiento");
 		SimpleDateFormat formatter=new SimpleDateFormat("dd/MM/yyyy");
-		String numPremios = request.getParameter("numPremios");
 		Date fecha = null;
 		try {
 			fecha = formatter.parse(cadenaFecha);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		String numPremios = request.getParameter("numPremios");
 		Director director = new Director();
 		
 //		director.setPeliculas(request.getParameter("pelicula")); La lista de peliculas sera accesible desde la entidad pelicula

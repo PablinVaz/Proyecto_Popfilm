@@ -1,16 +1,21 @@
 package com.entidades.dao.impl.jee;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 
 import com.entidades.dao.jee.PeliculaDao;
-import com.entidades.jee.Director;
 import com.entidades.jee.Pelicula;
+
 
 
 public class PeliculaDaoImpl implements PeliculaDao {
@@ -46,6 +51,28 @@ public class PeliculaDaoImpl implements PeliculaDao {
 		List<Pelicula>listaPeliculas=query.getResultList();
 		return listaPeliculas;
 		
+	}
+	
+	public List<Pelicula> filterByCriteria(Pelicula pelicula) {
+
+		CriteriaBuilder builder = manager.getCriteriaBuilder();
+		CriteriaQuery<Pelicula> criteria = builder.createQuery(Pelicula.class);
+
+		Root<Pelicula> root = criteria.from(Pelicula.class);
+		List<Predicate> predicates = new ArrayList<>();
+		
+		
+		
+
+		if (pelicula.getYear() != null) {
+			predicates.add(builder.equal(root.get("year"), pelicula.getYear()));
+		}
+		
+
+		criteria.where(predicates.toArray(new Predicate[] {}));
+		List<Pelicula> peliculas = manager.createQuery(criteria).getResultList();
+
+		return peliculas;
 	}
 
 	@Override

@@ -1,7 +1,8 @@
 package com.entidades.jee;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +57,7 @@ public class Pelicula implements Serializable{
 	@Column(name="sinopsis")
 	private String sinopsis;
 	
+	
 	//ASOCIACIONES
 	
 	@ManyToOne(fetch = FetchType.LAZY) // The attribute type for a collection mapping must be java.util.Collection, java.util.Set, java.util.List or java.util.Map
@@ -71,6 +73,10 @@ public class Pelicula implements Serializable{
 	joinColumns = @JoinColumn(name = "id_pelicula", referencedColumnName = "id_pelicula"),
 	inverseJoinColumns = @JoinColumn(name = "id_genero", referencedColumnName = "id_genero"))
 	private List<Genero> generos = new ArrayList<>();
+	
+	@Column(name="year")
+	private Integer year;
+	
 	// private Genero genero;
 	
 	// Constructor vacio de la entidad
@@ -81,7 +87,7 @@ public class Pelicula implements Serializable{
 	// Constructor Sobrecargado de la entidad
 	
 	public Pelicula(Long id_pelicula, String titulo, String reparto, Date fechaEstreno, String edadRecomendada, String sinopsis,
-			Director director, Productora productora, List<Genero> generos) {
+			Director director, Productora productora, List<Genero> generos, Integer year) {
 	super();
 	this.id_pelicula = id_pelicula;
 	this.titulo = titulo;
@@ -92,8 +98,19 @@ public class Pelicula implements Serializable{
 	this.director = director;
 	this.productora = productora;
 	this.generos = generos;
+	
+	this.fillyear();
+
+	
 	}
 	
+	private void fillyear() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		String fechaComoCadena = sdf.format(this.fechaEstreno);
+		String subcadena = fechaComoCadena.substring(fechaComoCadena.length() - 4);
+		this.year = Integer.valueOf(subcadena);		
+	}
+
 	// GETTER AND SETTER
 
 	public Long getId() {
@@ -126,8 +143,20 @@ public class Pelicula implements Serializable{
 
 	public void setFechaEstreno(Date fechaEstreno) {
 		this.fechaEstreno = fechaEstreno;
+		this.fillyear();
+		
 	}
 	
+	
+	
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
 	public String getEdadRecomendada() {
 		return edadRecomendada;
 	}

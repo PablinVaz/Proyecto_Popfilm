@@ -5,12 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
 import com.entidades.dao.jee.ProductoraDao;
-import com.entidades.jee.Director;
-import com.entidades.jee.Pelicula;
 import com.entidades.jee.Productora;
 
 
@@ -19,7 +16,6 @@ public class ProductoraDaoImpl implements ProductoraDao {
 	
 	
 	
-	private static final String USER_FIND = "SELECT p FROM Productora p where p.id=:id";
 	private static final String USER_FIND_ALL= "SELECT p FROM Productora p";
 	
 	private EntityManagerFactory managerFactory;

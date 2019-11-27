@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+D:\popfilmjpa2\jpa-ejercicios\.metadata\.plugins\org.eclipse.jdt.core
-2248270332.index
-1151318279.index
